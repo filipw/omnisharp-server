@@ -14,3 +14,16 @@ public class FixUsingsModule : NancyModule
         };
     }
 }
+
+public class ImplmentInterfaceModule : NancyModule
+{
+    public ImplmentInterfaceModule(ImplementInterfaceHandler implmentInterfaceHandler)
+    {
+        Post["/implementinterface"] = x =>
+        {
+            var req = this.Bind<OmniSharp.Common.Request>();
+            var res = implmentInterfaceHandler.ImplementInterface(req);
+            return Response.AsJson(res);
+        };
+    }
+}
