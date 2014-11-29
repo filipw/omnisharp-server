@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using OmniSharp.CodeActions;
 using OmniSharp.CodeIssues;
 using OmniSharp.Common;
 using OmniSharp.Configuration;
