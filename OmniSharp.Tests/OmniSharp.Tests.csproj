@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoComplete\MethodHeaderTests.cs" />
+    <Compile Include="ImplementInterface\ImplementInterfaceExtensions.cs" />
+    <Compile Include="ImplementInterface\ImplementInterfaceTests.cs" />
     <Compile Include="ProjectManipulation\AddReference\AddFileReferenceTests.cs" />
     <Compile Include="ProjectManipulation\AddReference\AddGacReferenceTests.cs" />
     <Compile Include="ProjectManipulation\AddReference\AddProjectReferenceTests.cs" />
@@ -153,7 +155,5 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <!--<Import Project="$(SolutionDir)\.nuget\nuget.targets" />-->
-  <ItemGroup>
-    <Folder Include="SemanticErrors\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

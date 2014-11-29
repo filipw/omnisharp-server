@@ -25,6 +25,11 @@ namespace OmniSharp.CodeActions
             var context = OmniSharpRefactoringContext.GetContext(_bufferParser, request);
             var actions = new ImplementInterfaceAction().GetActions(context);
 
+            if (actions == null || !actions.Any())
+            {
+                return new ImplementInterfaceResponse(request.Buffer, implementedSuccessfully: false);
+            }
+
             using (var script = new OmniSharpScript(context, _config))
             {
                 foreach (var action in actions.Where(action => action != null))
@@ -33,7 +38,7 @@ namespace OmniSharp.CodeActions
                     action.Run(script);
                 }
             }
-            return new ImplementInterfaceResponse(context.Document.Text);
+            return new ImplementInterfaceResponse(context.Document.Text, implementedSuccessfully: true);
         }
     }
 }

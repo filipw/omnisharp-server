@@ -1,9 +1,15 @@
-public class ImplementInterfaceResponse
+namespace OmniSharp.CodeActions
 {
-    public ImplementInterfaceResponse(string buffer)
+    public class ImplementInterfaceResponse
     {
-        Buffer = buffer;
-    }
+        public ImplementInterfaceResponse(string buffer, bool implementedSuccessfully)
+        {
+            Buffer = buffer;
+            ImplementedSuccessfully = implementedSuccessfully;
+        }
 
-    public string Buffer { get; private set; }
+        public string Buffer { get; private set; }
+
+        public bool ImplementedSuccessfully { get; private set; }
+    }
 }
